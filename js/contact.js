@@ -82,7 +82,7 @@ function validateEmail(email) {
 }
 
 
-const createMessage = document.querySelector("#message");
+const createMessage = document.querySelector("#submitted-message");
 
 function submitForm() {
     createMessage.innerHTML = `<div class="submitted"> Your message has been sent successfully!</div>`;
@@ -95,7 +95,6 @@ contactForm.addEventListener("submit", (e) => {
     if (isFormValid){
         contactForm.reset();
         submitForm();
-    
     }
 });
 
