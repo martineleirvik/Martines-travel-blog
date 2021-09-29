@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Martine's travel blog</title>
+        <meta name="description" content="Female travel blogger, travelling the whole world. Here you will get travel guides, food recommandations, photographys and tips to make your own travel the best one.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <script src="https://kit.fontawesome.com/8c6eeba9fa.js" crossorigin="anonymous"></script>  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="nav1">
+                <h1 id="heading-martine">Martine's travel blog</h1>
+                <div class="icons">
+                    <ul>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest"></i>
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-youtube"></i>
+                    </ul>
+                </div>
+            </div>  
+            <div class="nav2">
+                <img id="logo" src="images/Logo-blog.png" alt= "Logo for Martine's travel blog">
+                <label class="hamburger-label" for="hamburger-menu"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="hamburger-menu">
+                <nav>
+                    <ul>
+                        <li><a class="current" href="index.html">Home</a></li>
+                        <li><a href="blogpage.html">Blog</a></li>
+                        <li><a href="aboutme.html">About me</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h2>Latest blog posts</h2>
+            <div class="latest-post">
+                <div class="pointer">
+                    <div class="left-point">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                </div>
+                    <div class="pointer">
+                    <div class="right-point">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <div class="sub-container">
+                <div class="sub">
+                    <p id="sub-heading">Subscribe to my newsletter</p>
+                    <p>Subscribe to my weekly newsletter to get travel related updates and tips.</p>
+                </div>  
+                <div class="inputemail">
+                        <input type="email" name="email" id="emailsub" required placeholder=" Your email address">
+                        <input type="submit" value="Subscribe" id="subscribe">
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="copyright">
+                <p> Copyright &copy; 2021 Martine's travel blog</p>
+            </div>
+        </footer>
+        <script src="js/components/error.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
