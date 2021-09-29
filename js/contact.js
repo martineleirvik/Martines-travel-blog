@@ -1,4 +1,4 @@
-const form = document.querySelector("#theform");
+const contactForm = document.querySelector("#theform");
 
 const fullName = document.querySelector("#name");
 const fullNameError = document.querySelector("#nameerror");
@@ -13,38 +13,58 @@ const text = document.querySelector("#text");
 const textError = document.querySelector("#texterror");
 
 
+let isFormValid = false;
+
+
 function validateForm() {
     event.preventDefault();
 
 
     if (checkLength(fullName.value, 5) === true) {
         fullNameError.style.display = "none";
+        isFormValid = true;
     } else {
         fullNameError.style.display = "block";
+        isFormValid = false;
     }
 
     if (validateEmail(email.value) === true) {
         emailError.style.display = "none";
+        isFormValid = true;
     } else {
         emailError.style.display = "block";
+        isFormValid = false;
     }
 
     if (checkLength(subject.value, 16) === true) {
         subjectError.style.display = "none";
+        isFormValid = true;
     } else {
         subjectError.style.display = "block";
+        isFormValid = false;
     }
 
     if (checkLength(text.value, 25) === true) {
         textError.style.display = "none";
+        isFormValid = true;
     } else {
         textError.style.display = "block";
+        isFormValid = false;
     }
+    
+    const fullNamee = document.querySelector("#name");
+    console.log(fullNamee.value)
+
+    const emaill = document.querySelector("#email");
+    console.log(emaill.value)
+
+    const subjectt = document.querySelector("#subject");
+    console.log(subjectt.value)
+
+    const textt = document.querySelector("#text");
+    console.log(textt.value)
 
 }
-
-form.addEventListener("submit", validateForm);
-
 
 
 function checkLength(value, len) {
@@ -62,23 +82,20 @@ function validateEmail(email) {
 }
 
 
-form.onsubmit = function (event) {
+const createMessage = document.querySelector("#message");
+
+function submitForm() {
+    createMessage.innerHTML = `<div class="submitted"> Your message has been sent successfully!</div>`;
+}
+
+
+contactForm.addEventListener("submit", (e) => {
     event.preventDefault();
+    validateForm();
+    if (isFormValid){
+        contactForm.reset();
+        submitForm();
+    
+    }
+});
 
-    const fullName = document.querySelector("#name");
-    console.log(fullName.value)
-
-    const email = document.querySelector("#email");
-    console.log(email.value)
-
-    const subject = document.querySelector("#subject");
-    console.log(subject.value)
-
-    const text = document.querySelector("#text");
-    console.log(text.value)
-
-    form.reset();
-};
-
-
-const message = document.querySelector("#submitted-message");

@@ -586,9 +586,9 @@ button {
     /* blogspesific */
 
     .oneblogpost {
-        margin: 50px 50px;
-        border: 1px solid #5e5a5a;
-        padding: 0 80px 30px 80px;
+        margin: 80px;
+        padding: 5px 80px 30px 80px;
+        box-shadow: 0px 10px 20px 10px rgb(207, 207, 207);
     }
 
 
