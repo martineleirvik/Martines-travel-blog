@@ -1,4 +1,4 @@
-const form = document.querySelector(".contact-form");
+const form = document.querySelector("#theform");
 
 const fullName = document.querySelector("#name");
 const fullNameError = document.querySelector("#nameerror");
@@ -60,3 +60,25 @@ function validateEmail(email) {
     const patternMatches = regEx.test(email);
     return patternMatches;
 }
+
+
+form.onsubmit = function (event) {
+    event.preventDefault();
+
+    const fullName = document.querySelector("#name");
+    console.log(fullName.value)
+
+    const email = document.querySelector("#email");
+    console.log(email.value)
+
+    const subject = document.querySelector("#subject");
+    console.log(subject.value)
+
+    const text = document.querySelector("#text");
+    console.log(text.value)
+
+    form.reset();
+};
+
+
+const message = document.querySelector("#submitted-message");
