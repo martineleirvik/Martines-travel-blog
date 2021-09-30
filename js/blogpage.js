@@ -64,3 +64,21 @@ async function buttonClick() {
 }
 
 button.addEventListener("click", buttonClick);
+
+
+const searchBar = document.querySelector("#searchinput");
+let searchposts = [];
+
+console.log(searchposts);
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value;
+    const filteredPosts = searchposts.filter( post => {
+        return ( 
+            post.title.includes(searchString)
+        );
+
+    });
+    console.log(filteredPosts);
+});
+

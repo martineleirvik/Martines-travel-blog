@@ -141,7 +141,7 @@ footer {
 
 .contact-form {
     border-top: 1px solid #c0bbbb;
-    padding-top: 35px;;
+    padding-top: 35px;
 }
 
 .postcard {
@@ -420,6 +420,20 @@ button {
         transform: rotate(360deg);
     }
 }
+
+
+ /* search */
+
+ .search-container {
+     text-align: right;
+     margin-right: 70px;
+ }
+
+ #searchinput {
+     height: 30px;
+     font-size: 1rem;
+ }
+
 
 
 

@@ -1,0 +1,39 @@
+.search-box {
+    height: 60px;
+    width: 350px;
+    position: relative;
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    outline: none;
+    background: #ffffff;
+    font-size: 18px;
+    border-radius: 50px;
+    padding: 0 60px 0 20px;
+    background-color: rgb(201, 201, 201);
+}
+
+.search-box .search-btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50px;
+    transform: translateY(-50%);
+    background-color: #F6E7EC;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.search-box .cancel-btn {
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+}
