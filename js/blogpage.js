@@ -1,6 +1,6 @@
 const url = "https://www.flowerpower-ml.no/wp-json/wp/v2/posts?_embed&per_page=100";
 const blogpostContainer = document.querySelector(".blogposts");
-const button = document.querySelector("button");
+const button = document.querySelector(".showButton");
 const nomore = document.querySelector(".nomore-posts");
 
 async function getPosts() {
@@ -66,19 +66,12 @@ async function buttonClick() {
 button.addEventListener("click", buttonClick);
 
 
-const searchBar = document.querySelector("#searchinput");
-let searchposts = [];
+const form = document.querySelector('form.searchform');
 
-console.log(searchposts);
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
-    const filteredPosts = searchposts.filter( post => {
-        return ( 
-            post.title.includes(searchString)
-        );
+  yourCodeHere()
+})
 
-    });
-    console.log(filteredPosts);
-});
 

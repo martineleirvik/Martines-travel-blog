@@ -437,6 +437,27 @@ button {
 
 
 
+ #searchbutton {
+    padding:0;
+     border: none;
+     background-color: #ffffff;
+     margin: 7px 0 0 0 ;
+ }
+
+ .searchform {
+     display: flex;
+ }
+
+ .searchform input {
+     height: 30px;
+     font-size: 1rem;
+ }
+
+
+
+
+
+
 
 
 @media (min-width: 600px) {

@@ -44,18 +44,18 @@
         <main>
             <h2>Latest blog posts</h2>
 
-            <div class="search-container">
-                    <form></form>
-                    <input type="text" id="searchinput" placeholder="Search blogposts">
-                    <i class="fas fa-search"></i>
-            </div>
 
+            <form class ="searchform" action="/searchresult.html" method="GET">
+                <input type="search" name="search" placeholder="Search blogposts"/>
+                <button id="searchbutton"><i class="fas fa-search"></i></button>
+              </form>
 
+        
             <div class="blogposts">
                 <div class="loader"></div>
             </div>
             <div class="nomore-posts"></div>
-            <button type="showButton">Show more blogposts</button>
+            <button type="showButton" class="showButton">Show more blogposts</button>
         </main>
 
         <footer>
