@@ -66,12 +66,30 @@ async function buttonClick() {
 button.addEventListener("click", buttonClick);
 
 
+// Search filter
+
 const form = document.querySelector('form.searchform');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
-  yourCodeHere()
-})
+  const response = await fetch(url);
+  const contents = await response.json();
 
+  const form = event.target;
+  
+  console.log(event, form);
 
+  const searchValue = form.search.value.toLowerCase;
+  
+  console.log(searchValue);
+
+  for (i = 0; i <contents.length; i++) {
+      if (contents[i].contains(searchValue)) {
+          contents[i].style.display = "block";
+      } else {
+          contents[i].style.display = "none"
+      }
+  }
+
+  });
