@@ -20,12 +20,8 @@ async function getPosts() {
                 break;
             }
 
-            blogpostContainer.innerHTML +=
-                                        `<a href="blogspesific.html?id=${contents[i].id}" class="post">
-                                        <h3>${contents[i].title.rendered}</h3>
-                                        <img class="latestpicture" src="${contents[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${contents[i]._embedded['wp:featuredmedia']['0'].alt_text}">
-                                        <p>${contents[i].excerpt.rendered}</p>
-                                        </a>`
+            renderItems(contents[i]);                  
+
         }
     }
 
@@ -36,6 +32,18 @@ async function getPosts() {
 }
 
 getPosts();
+
+
+
+export function renderItems(contents){
+    blogpostContainer.innerHTML +=
+                                        `<a href="blogspesific.html?id=${contents.id}" class="post">
+                                        <h3>${contents.title.rendered}</h3>
+                                        <img class="latestpicture" src="${contents._embedded['wp:featuredmedia']['0'].source_url}" alt="${contents._embedded['wp:featuredmedia']['0'].alt_text}">
+                                        <p>${contents.excerpt.rendered}</p>
+                                        </a>` ;
+}
+
 
 async function buttonClick() {
 
@@ -48,13 +56,8 @@ async function buttonClick() {
         for (let i = 10; i < contents.length; i++) {
 
             console.log(contents[i].title.rendered);
+            renderItems(contents[i]);   
             
-            blogpostContainer.innerHTML +=
-                                        `<a href="blogspesific.html?id=${contents[i].id}" class="post">
-                                        <h3>${contents[i].title.rendered}</h3>
-                                        <img class="latestpicture" src="${contents[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${contents[i]._embedded['wp:featuredmedia']['0'].alt_text}">
-                                        <p>${contents[i].excerpt.rendered}</p>
-                                        </a>`
         }
     }
 
@@ -64,32 +67,3 @@ async function buttonClick() {
 }
 
 button.addEventListener("click", buttonClick);
-
-
-// Search filter
-
-const form = document.querySelector('form.searchform');
-
-form.addEventListener('submit', async function(event) {
-  event.preventDefault();
-
-  const response = await fetch(url);
-  const contents = await response.json();
-
-  const form = event.target;
-  
-  console.log(event, form);
-
-  const searchValue = form.search.value.toLowerCase;
-  
-  console.log(searchValue);
-
-  for (i = 0; i <contents.length; i++) {
-      if (contents[i].contains(searchValue)) {
-          contents[i].style.display = "block";
-      } else {
-          contents[i].style.display = "none"
-      }
-  }
-
-  });

@@ -424,38 +424,24 @@ button {
 
  /* search */
 
- .search-container {
-     text-align: right;
-     margin-right: 70px;
- }
-
- #searchinput {
-     height: 30px;
-     font-size: 1rem;
- }
-
-
-
-
  #searchbutton {
     padding:0;
-     border: none;
-     background-color: #ffffff;
-     margin: 7px 0 0 0 ;
+    border: none;
+    background-color: #ffffff;
+    margin: 7px 20px 20px 10px ;
+    cursor: pointer;
  }
 
  .searchform {
      display: flex;
+     justify-content: flex-end;
+     
  }
 
  .searchform input {
      height: 30px;
      font-size: 1rem;
  }
-
-
-
-
 
 
 
@@ -615,6 +601,10 @@ button {
 
     .modal-content {
         width: 80%;
+    }
+
+    #searchbutton {
+        margin: 7px 70px 20px 0 ;
     }
 
 
