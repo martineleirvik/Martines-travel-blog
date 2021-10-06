@@ -36,7 +36,7 @@ function filterContentsBySearchTerm(term) {
 }
 
 async function main() {
-  data = await getStuffFromAPI('api-url/api/items');
+  data = await getStuffFromAPI(url);
   renderItems(data);
   document.querySelector('form.searchform').addEventListener('submit', onSubmit);
 }
