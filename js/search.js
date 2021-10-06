@@ -22,14 +22,18 @@ async function getStuffFromAPI(url) {
 function onSubmit(event) {
   event.preventDefault();
   const form = event.target;
-  const searchValue = form.search.value.toLowerCase;
+  const searchValue = form.search.value.toLowerCase();
   console.log(searchValue);
   filterContentsBySearchTerm(searchValue);
 }
 
 function filterContentsBySearchTerm(term) {
   filteredData = data.filter(function(item) {
-    return item.property.contains(term);
+      if (item.title.rendered.toLowerCase().includes(term)){
+        } else if (item.excerpt.rendered.toLowerCase().includes(term)){
+        return true;
+      }
+      return false;
   });
 
   renderItems(filteredData);
