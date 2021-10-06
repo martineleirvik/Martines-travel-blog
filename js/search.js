@@ -4,6 +4,8 @@ let filteredData = [];
 
 const url = "https://www.flowerpower-ml.no/wp-json/wp/v2/posts?_embed&per_page=100";
 const blogpostContainer = document.querySelector(".blogposts");
+const button = document.querySelector(".showButton");
+
 
 
 const form = document.querySelector('form.searchform');
@@ -29,8 +31,9 @@ function onSubmit(event) {
 
 function filterContentsBySearchTerm(term) {
   filteredData = data.filter(function(item) {
-      if (item.title.rendered.toLowerCase().includes(term)){
-        } else if (item.excerpt.rendered.toLowerCase().includes(term)){
+      if ((item.title.rendered.toLowerCase().includes(term)) || (item.excerpt.rendered.toLowerCase().includes(term))){
+        button.setAttribute("disabled", false);
+
         return true;
       }
       return false;
