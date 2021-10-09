@@ -1,6 +1,8 @@
-const url = "https://www.flowerpower-ml.no/wp-json/wp/v2/posts?_embed&per_page=100";
+const url = "https://www.flowerpower-ml.no/wp-json/wp/v2/posts?_embed&per_page=6";
 const blogpostContainer = document.querySelector(".blogposts");
 const button = document.querySelector(".showButton");
+
+
 
 
 async function getPosts() {
@@ -12,8 +14,7 @@ async function getPosts() {
 
         blogpostContainer.innerHTML = "";
         
-            renderItems(contents);            
-
+        renderItems(contents);            
     }
 
     catch(error) {
@@ -37,7 +38,7 @@ export function renderItems(contents){
 }
 
 
-async function buttonClick() {
+function buttonClick() {
 
     button.setAttribute("disabled", false);
 

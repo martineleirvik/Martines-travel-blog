@@ -292,6 +292,16 @@ button {
   cursor: pointer;
 }
 
+#back {
+    color: #000000;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.backclass {
+    margin-top: 40px;
+}
+
 
 /* error */
 
@@ -611,7 +621,7 @@ button {
     /* blogspesific */
 
     .oneblogpost {
-        margin: 80px;
+        margin: 30px 80px 80px 80px;
         padding: 5px 80px 30px 80px;
         box-shadow: 0px 10px 20px 10px rgb(207, 207, 207);
     }
