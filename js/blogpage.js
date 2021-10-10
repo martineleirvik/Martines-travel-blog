@@ -1,4 +1,4 @@
-const url = "https://www.flowerpower-ml.no/wp-json/wp/v2/posts?_embed&per_page=6";
+const url = "https://www.flowerpower-ml.no/wp-json/wp/v2/posts?_embed&per_page=100";
 const blogpostContainer = document.querySelector(".blogposts");
 const button = document.querySelector(".showButton");
 
@@ -14,7 +14,7 @@ async function getPosts() {
 
         blogpostContainer.innerHTML = "";
         
-        renderItems(contents(0, 3));           
+        renderItems(contents);           
     }
 
     catch(error) {
