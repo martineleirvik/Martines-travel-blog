@@ -1,4 +1,4 @@
-import {renderItems} from './blogpage.js';
+import {renderItems} from "./blogpage.js";
 let data = [];
 let filteredData = [];
 
@@ -8,7 +8,7 @@ const button = document.querySelector(".showButton");
 
 
 
-const form = document.querySelector('form.searchform');
+const form = document.querySelector("form.searchform");
 
 async function getStuffFromAPI(url) {
   try {
@@ -16,7 +16,7 @@ async function getStuffFromAPI(url) {
     const contents = await response.json();
     return contents;
   } catch(error) {
-    console.warn();('Something went wrong', error);
+    console.warn();("Something went wrong", error);
     return [];
   }
 }
@@ -36,6 +36,7 @@ function filterContentsBySearchTerm(term) {
 
         return true;
       }
+      button.setAttribute("disabled", false);
       return false;
   });
 
@@ -45,7 +46,7 @@ function filterContentsBySearchTerm(term) {
 async function main() {
   data = await getStuffFromAPI(url);
   renderItems(data);
-  document.querySelector('form.searchform').addEventListener('submit', onSubmit);
+  document.querySelector("form.searchform").addEventListener("submit", onSubmit);
 }
 
 main();

@@ -14,7 +14,7 @@ async function getPosts() {
 
         blogpostContainer.innerHTML = "";
         
-        renderItems(contents);            
+        renderItems(contents(0, 3));           
     }
 
     catch(error) {
