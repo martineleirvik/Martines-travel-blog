@@ -38,10 +38,3 @@ export function renderItems(contents){
 }
 
 
-function buttonClick() {
-
-    button.setAttribute("disabled", false);
-
-}
-
-button.addEventListener("click", buttonClick);
